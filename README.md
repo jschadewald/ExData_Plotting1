@@ -1,6 +1,6 @@
 Hi Reviewer!
 
-This is a modification to the forked `README.md` to include this pre-introduction prepended to the original.  This section contains some notes about interpretations, assumptions, and reasoning about aspect not stated explictly in the assignment.
+This is a modification to the forked `README.md` to include this pre-introduction prepended to the original.  This section contains some notes about interpretations, assumptions, and reasoning about aspects of the assignment that were not stated explictly in the assignment.
 
 My interpretation of this assignment is that we're supposed to show that we understand the base plotting functions well enough to perform the following common tasks:
 * Show multiple variables in the same plot
