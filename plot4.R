@@ -26,7 +26,7 @@ plot4_main <- function() {
 makePlot4 <- function(data) {
     op<-par(mfcol=c(2,2)) #Create grid and store old par values
     
-    #Call plots
+    #Make sub-plots. Remember the order due to 'mfcol'.
     makeTopLeftPlot(data)
     makeBottomLeftPlot(data)
     makeTopRightPlot(data)
