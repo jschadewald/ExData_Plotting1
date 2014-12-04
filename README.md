@@ -1,3 +1,48 @@
+Hi Reviewer!
+
+This is a modification to the forked `README.md` to include this pre-introduction prepended to the original.  This section contains some notes about interpretations, assumptions, and reasoning about aspect not stated explictly in the assignment.
+
+My interpretation of this assignment is that we're supposed to show that we understand the base plotting functions well enough to perform the following common tasks:
+* Show multiple variables in the same plot
+* Use different colors
+* Create lines graphs and histograms
+* Specify text in titles and axes
+* Create legends
+* Print multiple plots to a single device
+
+From the examples and instructions given, it appears that this assignment does not include:
+* Setting fonts and sizes of text
+* Making changes to margins (inner or outer)
+
+The above two assumptions are also based partially on the fact that, on my Windows 7 64-bit machine, the default settings yield results that are extremely close to the reference plots.  Aside from that, it can be reasoned that font-matching is not generally a necessary or important skill for a Data Scientist to master (except in the case that the object of study is text itself such as seen here: https://medium.com/@adambanksdotcom/legos-letter-to-parents-and-how-not-to-tell-a-fake-when-you-dont-see-one-2ca9dfe586d7).
+
+Also worth noting is that my first attempt involved creating the plots in the default RStudioGD device and then using dev.copy() to copy the plot on the screen to png.  This resulted in lower-quality png plots, including label/axis text that was too large and a legend that covered part of the graph.  By switching to calling png() directly, those issues disappeared.
+
+##About the Code
+To execute the code that produces the required png:
+
+1. Download <https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip>
+2. Unzip it so that the "power" folder is in your working directory.
+3. Source the appropriate R file.
+4. Run the corresponding top-level function: `plot1_main()`, `plot2_main()`, `plot3_main()`, or `plot4_main()`.
+5. Verify that `plot<x>.png` was created according to requirements.
+
+
+All four .R files follow the same basic structure:
+* A top-level `plot<x>_main()` function that coordinates execution of other functions
+* A `makePlot<x>()` function that draws the plot in a device-independent manner
+* A `getRelevantData()` function to read data from the txt file and return only the rows for Feb 1-2, 2007.
+* A `joinDateAndTime()` function that combines the "Date" and "Time" columns into a "datetime" column and converts the data to POSIXct by using `dmy_hms()` from the `lubridate` package.
+* `plot4.R` has an additional four functions, each of which is responsible to draw one of the four sub-plots in `plot4.png`.
+
+
+As an aside, I would ordinarily prefer to have common functions like `getRelevantData()` and `joinDateAndTime()` in a separate, common R file that would be sourced by the rest.  However, this assignment was very explicit in terms of instructions and grading criteria about the number and contents of the R files.  In a professional setting, I would take additional measures toward readability, scalability, and maintainability.
+
+
+```
+Note: Everything below is part of the original `README.md` from 
+the forked repository, and I have left it unmodified.
+```
 ## Introduction
 
 This assignment uses data from
